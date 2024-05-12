@@ -47,7 +47,7 @@ def get_time_of_day(hour):
 
 # Main function to run the program
 def main():
-    train_df = load_data('dmt-2024-2nd-assignment/training_set_VU_DM.csv')
+    train_df = load_data('training_set_VU_DM.csv')
 
     train_df['date_time'] = pd.to_datetime(train_df['date_time'])
     train_df['time_of_day'] = train_df['date_time'].dt.hour.apply(get_time_of_day)
@@ -64,7 +64,7 @@ def main():
     train_df['max_rate_percent_diff'] = train_df[[f'comp{i}_rate_percent_diff' for i in range(1, 3)]].max(axis=1, skipna=True)
     train_df['min_rate_percent_diff'] = train_df[[f'comp{i}_rate_percent_diff' for i in range(1, 3)]].min(axis=1, skipna=True)
 
-    test_df = load_data('dmt-2024-2nd-assignment/test_set_VU_DM.csv')
+    test_df = load_data('test_set_VU_DM.csv')
 
 
     test_df['date_time'] = pd.to_datetime(test_df['date_time'])

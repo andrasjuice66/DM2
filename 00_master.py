@@ -28,9 +28,9 @@ def run_notebook(notebook_path):
 if __name__ == "__main__":
     workflow_steps = [
         ('notebook', '01_data_preparation.ipynb')
-        # ('notebook', '02_feature_engineering.ipynb'),
+        ,('notebook', '02_feature_engineering.ipynb')
         ,('script', '03_train_model.py')
-        # ('script', '04_evaluation.py')
+         ,('script', '04_evaluation.py')
     ]
 
     for step_type, file_name in workflow_steps:
